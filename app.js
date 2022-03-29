@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.use('/tasks', tasksRouter)
 
 app.all('*', (req, res) => {
-  res.status(400).json({message: "This endpoint doesn't exist"})
+  res.status(404).json({message: "This endpoint doesn't exist"})
 })
 
 app.listen(PORT, () => {console.log(`Server started on port ${PORT}`)})

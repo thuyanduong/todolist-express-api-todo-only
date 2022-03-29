@@ -10,7 +10,7 @@ module.exports = {
     connection: {
       database: 'todo',
       user:     'postgres',
-      password: 'password'
+      password: ''
     }
   },
   production: {
