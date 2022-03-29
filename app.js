@@ -1,5 +1,4 @@
 const express = require('express')
-const usersRouter = require('./routes/usersRouter')
 const tasksRouter = require('./routes/tasksRouter')
 
 const PORT = process.env.PORT || 3001
@@ -13,7 +12,6 @@ app.get('/', (req, res) => {
   res.status(200).json({message: "This is an API"})
 })
 
-app.use('/users', usersRouter)
 app.use('/tasks', tasksRouter)
 
 app.all('*', (req, res) => {
