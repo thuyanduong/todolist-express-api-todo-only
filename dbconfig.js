@@ -3,7 +3,9 @@ const { Pool } = require('pg')
 const connectionLocal = {
   user: 'postgres',
   password: '',
-  database: 'todo'
+  host: 'localhost',
+  database: 'todo',
+  port: 5432
 }
 
 const connectionProduction = {
