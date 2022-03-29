@@ -1,4 +1,4 @@
-const db = require('../db/config')
+const db = require('../dbconfig')
 
 class Task {
   static updateTask(id, title, description){

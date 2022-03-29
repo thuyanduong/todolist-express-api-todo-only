@@ -3,6 +3,12 @@ const Task = require('../models/Task')
 const updateTaskAPI = async (req, res) => {
   try {
     const id = req.params.id;
+    if(!req.body.title){
+      res.status(400).json({message: "Missing title in body of request"})
+    }
+    if(!req.body.description){
+      res.status(400).json({message: "Missing description in body of request"})
+    }
     const task = await Task.updateTask(id, req.body.title, req.body.description)
     if(task) {
       res.status(200).json(task);
@@ -43,6 +49,12 @@ const markCompleteAPI = async (req, res) => {
 }
 
 const createTaskAPI = async (req, res) => {
+  if(!req.body.title){
+    res.status(400).json({message: "Missing title in body of request"})
+  }
+  if(!req.body.description){
+    res.status(400).json({message: "Missing description in body of request"})
+  }
   try {
     const newTask = await Task.createTask(req.body.title, req.body.description)
     res.status(201).json(newTask)
